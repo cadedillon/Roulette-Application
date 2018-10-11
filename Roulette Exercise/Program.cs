@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Roulette_Exercise
+namespace Roulette
 {
     class Program
     {
@@ -21,7 +21,6 @@ namespace Roulette_Exercise
                 //TODO: Implement a system for checking the total number of the player chips at the end of every spin
                 //TODO: Make the program more robust at every place the user must interact with the console
                 //TODO: Refactor some of the redundant code?
-                //TODO: 
                 
             }
             catch (ArgumentException aEx)
