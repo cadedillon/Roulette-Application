@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace Roulette
 {
+    //This class represents the Roulette Table. Methods contained in this class center around user interaction
+    //Table serves as the entry point in the user activity of the application
     class Table
     {
         static readonly string format = "\n\t";
         static readonly string lineBreak = "---------------------------------------------------------------------------------------";
 
+        //RouletteTable method is the first entry point from the Program.Main method.
+        //Chip values are initialized to 500, and after setting the scene the app flow is transferred to the place bet function
+        //When the game is considered over, if the user chooses to play again, they will be returned here
         public static void RouletteTable()
         {
             int initialChips = 500;
@@ -18,14 +23,17 @@ namespace Roulette
             Console.WriteLine(format + "The ambience draws you in, you hear jazz music somewhere in the distance.");
             Console.WriteLine(format + "The dealer, a blonde man of about 23, turns to face you.");
             Console.WriteLine(format + "'Welcome! Place your bet and spin the wheel.'");
-            Console.WriteLine(format + "You start with 500 Chips. The game ends when you have 0 chips, or 1000.");
+            Console.WriteLine(format + "You start with 500 Chips."); 
+                //"The game ends when you have 0 chips, or 1000."); **Chip check functionality coming soon!**
             Console.WriteLine(format + lineBreak);
             Console.ReadLine();
             Gamble.PlaceBet(initialChips);
 
            
         }
-
+        //The PlayRoulette method is the meat and potatoes of the Roulette application, if you will.
+        //Here we instantiate the RouletteWheel class, generate the random coordinates that represent 
+        //The result of the spin, and we take the players bet and pass it off to the result checking methods
         public static void PlayRoulette(int chips, int playerSelection, int playerBet)
         {
             RouletteWheel cadesWheel = new RouletteWheel();
@@ -47,7 +55,9 @@ namespace Roulette
 
             string color = cadesWheel.CheckColor(xCoord, spinResult);
             bool win;
-            //Console.WriteLine(format + $"The winning number is {spinResult}");
+            //Console.WriteLine(format + $"The winning number is {spinResult}"); 
+            //**Used for testing purposes! If uncommented you can see the result of 
+            //the spin before you place a bet! **
             switch (playerSelection)
             {
                 case 1:
@@ -163,12 +173,16 @@ namespace Roulette
                     }
                     break;
             }
-            
+            //At the end of the PlayRoulette I pass control off to the SpinAgain method, which gives the user a choice to either 
+            //Place another bet and spin the wheel again, or to gracefully exit the program
+
             SpinAgain(chips);
             
         }
 
-        
+        //Simple user interaction method which provides oppurtunity for returning to the PlaceBet 
+        //Method or gracefully exiting the application
+        //Any entry other than 1 or 2 will throw an exception
         public static void SpinAgain(int chips)
         {
             Console.WriteLine(format + lineBreak);

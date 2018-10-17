@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Roulette
 {
+    //These two methods are strictly for telling the user that they either won or lost
+    //and manipulating the value of chips (the chips variable represents the users current number of chips and are persistent throughout the application)
+    //based on the user bet
     class CalculatePayouts
     {
         static readonly string format = "\n\t";

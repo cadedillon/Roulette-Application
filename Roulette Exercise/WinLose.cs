@@ -6,6 +6,14 @@ using System.Threading.Tasks;
 
 namespace Roulette
 {
+    //The WinLose class gives the user all of the available betting options for the type of bet they have selected
+    //Then it takes the user's bet and checks it aginst the win conditions of the bet type (by passing it to the CheckBets class)
+    //If the user has won, the method returns true, if the user has lost it returns false
+
+    //In summary, WinLose works together with CheckBets to determine:
+    // 1. What the user bet is
+    // 2. What the win conditions for bet type are based on the spinResult
+    // 3. If the user bet matches those win conditions
     class WinLose
     {
         static readonly string format = "\n\t";

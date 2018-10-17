@@ -6,11 +6,19 @@ using System.Threading.Tasks;
 
 namespace Roulette
 {
+    //This class takes the result of the spin 
+    //(spinResult, 
+    //stringBet(if a user bets 0/00) if applicable,
+    //and zeroResult(if the result of the spin is 0/00) if applicable)
+    //and calculates which of the bet conditions are true.
+    //All methods return winner = true if the user won
+    //and return winner = false if user lost
     class CheckBets
     {
         public static string format = "\n\t";
         public static string lineBreak = "---------------------------------------------------------------------------------------";
         
+
         public static bool Numbers(string zeroResult, string stringBet, int spinResult)
         {
             bool winner;

@@ -20,7 +20,7 @@ namespace Roulette
 
                 //TODO: Implement a system for checking the total number of the player chips at the end of every spin
                 //TODO: Make the program more robust at every place the user must interact with the console
-                //TODO: Refactor some of the redundant code?
+                //TODO: Refactor some of the redundant code
                 
             }
             catch (ArgumentException aEx)
